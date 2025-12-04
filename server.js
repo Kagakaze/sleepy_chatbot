@@ -3,7 +3,7 @@ const server = http.createServer();
 
 const fs = require("fs");
 
-const port = 8082;
+const port = 8080;
 
 server.on("request", (req, res) => {
     if (req.url === "/images") {

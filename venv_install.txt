@@ -1,1 +1,9 @@
+Pour installer les dépendances :
+
+python3 -m venv venv
+source venv/bin/activate
+pip install -r rqrt.txt
+
+Pour les devs :
+
 pip freeze > rqrt.txt
