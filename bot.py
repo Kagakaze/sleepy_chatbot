@@ -5,7 +5,7 @@ import nltk
 
 nltk.download('punkt_tab')
 
-chatbot = ChatBot("Chatpot")
+chatbot = ChatBot("Sleepy Yumi")
 trainer = ChatterBotCorpusTrainer(chatbot)
 trainer.train("chatterbot.corpus.english")
 
