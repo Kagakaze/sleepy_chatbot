@@ -1,18 +1,12 @@
-#!/usr/bin/env python3
-from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
-import nltk
+from openai import OpenAI
+import os
 
-nltk.download('punkt_tab')
+client = OpenAI()
 
-chatbot = ChatBot("Sleepy Yumi")
-trainer = ChatterBotCorpusTrainer(chatbot)
-trainer.train("chatterbot.corpus.english")
+response = client.responses.create(
+  model="gpt-5-nano",
+  input=input("envoyer un message a gpt : "),
+  store=True,
+)
 
-exit_conditions = (":q", "quit", "exit")
-while True:
-    query = input("> ")
-    if query in exit_conditions:
-        break
-    else:
-        print(f"🪴 {chatbot.get_response(query)}")
+print(response.output_text)
