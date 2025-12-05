@@ -2,16 +2,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Modification de Valeur Flask</title>
+        <title>Sleepy Time</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <!-- <h1>Sleepy Yumi: <span style="color: blue;">{{ value }}</span></h1> -->
+        <!-- pour écrire les logs de discussion -->
         {% for conv in conversation_history %}
         <div class="produit">
             {% if conv.role=="assistant" %}
-                <li style="color: blue;">Sleepy Yumi : {{ conv.content }}</li>
+                <li class="assistant boite">Sleepy Yumi : <span class="text">{{ conv.content }}</span></li>
             {% elif conv.role=="user"%}
-                <li style="color: red;">You : {{ conv.content }}</li>
+                <li class="user boite">You : <span class="text">{{ conv.content }}</span></li>
             {% endif %}
             
         </div>
@@ -19,14 +20,13 @@
         {% block content %}{% endblock %}
         <hr>
 
-        <h2>Changer la Valeur</h2>
-        
+        <!-- barre d'input -->
         <form method="POST" action="/">
             
-            <label for="new_user_input">Nouvelle Valeur :</label>
+            <label for="new_user_input"></label>
             <input type="text" id="new_user_input" name="user_input" required>
             
-            <button type="submit">Mettre à Jour la Valeur</button>
+            <button id="button">➤</button>
             
         </form>
 

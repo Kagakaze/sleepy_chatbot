@@ -3,11 +3,10 @@ from openai import OpenAI
 
 app = Flask(__name__)
 
-GLOBAL_DATA = {"value": "Talk to me to get some very interesting anwsers !"}
-
+#connect to openAI
 client = OpenAI() 
-MAX_MESSAGES = 10 
 
+#first message to define character.
 conversation_history = [
     {"role": "system", "content": """
     Tu es un assistant IA qui cherche au mieux a repondre aux questions avec un twist, tu dois agir fatigué.
@@ -26,25 +25,28 @@ conversation_history = [
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+
+        #rget the request we want to send from the form
         user_input = request.form.get('user_input')
     
         if user_input:
-
+            #we use history to print everything in the app
             conversation_history.append({"role": "user", "content": user_input})
+            #ask the ai about the message
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo", 
                 messages=conversation_history
             )
-            
+            #give the answer from the ai to the web app
             assistant_response = response.choices[0].message.content
-            
+            #we use history to print everything in the app
             conversation_history.append({"role": "assistant", "content": assistant_response})
 
-
-            GLOBAL_DATA["value"] = assistant_response
+            #Reload the page
             return redirect(url_for('index'))
-    
+    #send history to the server to print everything
     return render_template("index.html", conversation_history=conversation_history)
 
+#loop for server to run
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)

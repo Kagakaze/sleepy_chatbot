@@ -1,0 +1,96 @@
+/* dark magic. */
+
+.assistant{
+    border: 2px solid black;
+    background-color: rgba(125, 125, 209,0.5);
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px; 
+}
+.user{
+    border: 2px solid black;
+    background-color: rgba(216, 113, 113,0.5);
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px; 
+}
+
+li {
+    color:black;
+    font-size: 24px;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.text {
+    color:rgb(45, 31, 45);
+    font-size: 22px;
+    font-weight:normal;
+}
+
+body {
+    background-image: url('background.png');
+    background-repeat: repeat; 
+    background-position: center center;
+    background-size:115%; 
+    background-attachment:fixed;
+    padding-bottom: 12vh;
+}
+
+.chat-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f0f2f5; 
+  padding: 10px;
+  border-radius: 30px;
+}
+
+#new_user_input {
+  flex: 1; 
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px; 
+  font-size: 25px;
+  width: 95%; 
+  box-sizing: border-box; 
+  margin: 0;
+  height:10%;
+}
+
+#button {
+  background: none;
+  border: none;
+  color: #4383ec; 
+  font-size: 50px;
+  position: absolute;
+  top:0px;
+  right: 12px; 
+  cursor: pointer;
+}
+
+h2 {
+    color:white;
+    position: relative;
+    top: 20px; 
+}
+
+form {
+  position: fixed;
+  bottom: 0; 
+  left: 0;    
+  
+  border-radius: 50px;
+  width: 100%;
+  height:10%;
+  z-index: 999;
+  
+  display:inline-block;
+  box-sizing: border-box;
+  padding: 8px;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+}
+
+
+
