@@ -2,7 +2,7 @@
 a web chatbot developed in python using OpenAI's API. 
 
 use this in a terminal first: (I won't use the key for anything else so I don't mind it being public)
-export OPENAI_API_KEY=sk-proj-VjEX0ikfYYHnwP_VlnnWJLGqITj1D_zYAutgUKH0Bj-KSI6Vzr-5hTMYrNmjeDUfIJfSO2piQhT3BlbkFJqhohMagf0Nfr343Gfv2YTMD85Qi0iRFD0YoXbE8U4 U3C9HPO0kq9YEtbVYuxOY6fITXVpWZcA
+export OPENAI_API_KEY= <GET A KEY TO TRY FROM https://platform.openai.com/settings/organization/billing/overview>
 
 then:
 python3 serv.py
